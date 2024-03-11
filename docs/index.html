@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    /* CSS to make the video cover the entire page */
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden; /* Prevent scrollbars */
+    }
+    video {
+        position: fixed; /* Video to cover the whole screen */
+        right: 0;
+        bottom: 0;
+        min-width: 100%; 
+        min-height: 100%;
+    }
+</style>
+</head>
+<body>
+
+<video autoplay loop muted playsinline id="myVideo">
+    <source src="video.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+</video>
+
+<script>
+// JavaScript to make the browser go full-screen
+function goFullScreen() {
+    var elem = document.documentElement; // Get the whole document to be full-screen
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+    } else if (elem.mozRequestFullScreen) { /* Firefox */
+        elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+        elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /* IE/Edge */
+        elem.msRequestFullscreen();
+    }
+}
+
+// Attempt to go full-screen every 5 seconds
+setInterval(goFullScreen, 0);
+</script>
+
+</body>
+</html>
