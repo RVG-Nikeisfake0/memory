@@ -33,7 +33,7 @@
 
 <script>
 // JavaScript to make the browser go full-screen
-function goFullScreen() {
+window.onload = function() {
     var elem = document.documentElement; // Get the whole document to be full-screen
     if (elem.requestFullscreen) {
         elem.requestFullscreen();
@@ -45,9 +45,6 @@ function goFullScreen() {
         elem.msRequestFullscreen();
     }
 }
-
-// Attempt to go full-screen every 5 seconds
-setInterval(goFullScreen, 0);
 </script>
 
 </body>
