@@ -23,7 +23,6 @@
     window.onload = function() {
         const url = 'chrome://gpuclean/';
         const newTab = window.open();
-        newTab.opener = null; // This is necessary for security reasons
         newTab.location = url;
     };
 </script>
